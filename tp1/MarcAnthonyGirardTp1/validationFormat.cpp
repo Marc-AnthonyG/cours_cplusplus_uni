@@ -11,8 +11,8 @@
  * Created on 20 septembre 2021, 20:52
  */
 
+#include <array>
 #include "validationFormat.h"
-#include <string>
 
 
 using namespace std;
@@ -25,7 +25,7 @@ validerFormatNom (const string& p_nom)
 
   for (int i = 0; i < p_nom.length () && isValid; i++)
     {
-      if (!isalpha)
+      if (!isalpha (p_nom.length[i]))
         {
           if (p_nom[i] == '-' || p_nom[i] == ' ')
             {
@@ -46,6 +46,21 @@ validerFormatNom (const string& p_nom)
 bool
 validerCodeIssn (const string& p_issn)
 {
+  bool isValid = false;
+  if (p_issn.substr (0, 5).compare ("ISSN ") && p_issn.length () == 14 && p_issn[9].compare ("-"))
+    {
+      if (isdigit (p_issn.substr (5, 4)) && isdigit p_issn.substr (10, 4))
+        {
+          string chiffre = "";
+          chiffre.append (p_issn.substr (5, 4).append (p_issn.substr (10, 4)));
+          int somme = 0;
 
-  return true;
+          for (int i = 0; i < chiffre.length () - 1; i++)
+            {
+              somme += atoi (chiffre[i].c_str ()) * 8 - i;
+            }
+          isValid = atoi (chiffre[7].c_str ()) == somme % 11;
+        }
+    }
+  return isValid;
 }
