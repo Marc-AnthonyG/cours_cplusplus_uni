@@ -25,31 +25,50 @@ validerFormatNom (const string& p_nom)
 
   for (int i = 0; i < p_nom.length () && isValid; i++)
     {
-      if (!isalpha (p_nom.length[i]))
-        {
+      if (!isalpha (p_nom[i]) {
           if (p_nom[i] == '-' || p_nom[i] == ' ')
             {
-              if (i + 1 != p_nom.length ())
-                isValid = !(p_nom[i + 1] == '-' || p_nom[i + 1] == ' ');
+          if (i + 1 != p_nom.length ())
+                {
+          isValid = !(p_nom[i + 1] == '-' || p_nom[i + 1] == ' ');
+                }
             }
           else
             {
-              isValid = false;
+
+
+          isValid = false;
             }
         }
-    }
-
-  return isValid;
+      }
+          return isValid;
 }
 
 
-bool
-validerCodeIssn (const string& p_issn)
+          bool
+isStringDigit (const string & aValider)
 {
-  bool isValid = false;
-  if (p_issn.substr (0, 5).compare ("ISSN ") && p_issn.length () == 14 && p_issn[9].compare ("-"))
+          bool isValid = true;
+          for (int i = 0; i < aValider.length () && isValid; i++)
     {
-      if (isdigit (p_issn.substr (5, 4)) && isdigit p_issn.substr (10, 4))
+          if (!isdigit (aValider[i]))
+        {
+
+
+          isValid = false;
+        }
+    }
+          return isValid;
+}
+
+
+          bool
+validerCodeIssn (const string & p_issn)
+{
+          bool isValid = false;
+          if (p_issn.substr (0, 5).compare ("ISSN ") && p_issn.length () == 14 && p_issn[9].compare ("-"))
+    {
+          if (isdigit (p_issn.substr (5, 4)) && isdigit p_issn.substr (10, 4))
         {
           string chiffre = "";
           chiffre.append (p_issn.substr (5, 4).append (p_issn.substr (10, 4)));
@@ -57,10 +76,10 @@ validerCodeIssn (const string& p_issn)
 
           for (int i = 0; i < chiffre.length () - 1; i++)
             {
-              somme += atoi (chiffre[i].c_str ()) * 8 - i;
+          somme += atoi (chiffre[i].c_str ()) * 8 - i;
             }
           isValid = atoi (chiffre[7].c_str ()) == somme % 11;
         }
     }
-  return isValid;
+          return isValid;
 }

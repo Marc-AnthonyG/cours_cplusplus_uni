@@ -14,9 +14,11 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <cstring>
 
 
 using namespace std;
+bool isStringDigit (const string& aValider);
 
 
 /*
@@ -25,28 +27,47 @@ using namespace std;
 int
 main (int argc, char** argv)
 {
-  string p_issn = "ISSN 1467-8640";
-
+  const string p_issn = "ISSN 1467-8640";
   bool isValid = false;
-  if (p_issn.substr (0, 5).compare ("ISSN ") && p_issn.length () == 14 && p_issn.substr (9, 1).compare ("-"))
-    {
-      if (isdigit (p_issn.substr (5, 4)) && isdigit p_issn.substr (10, 4))
-        {
-          string chiffre = "";
-          chiffre.append (p_issn.substr (5, 4).append (p_issn.substr (10, 4)));
-          int somme = 0;
 
-          for (int i = 0; i < chiffre.length () - 1; i++)
+  if (p_issn.substr (0, 5).compare ("ISSN ") == 0 && p_issn.length () == 14 && p_issn.substr (9, 1).compare ("-") == 0)
+    {
+      string chiffre = "";
+      chiffre.append (p_issn.substr (5, 4).append (p_issn.substr (10, 4)));
+      if (isStringDigit (chiffre))
+        {
+          int somme = 0;
+          for (int i = 0; i < chiffre.length (); i++)
             {
-              somme += atoi (chiffre.substr (i, 1).c_str ()) * 8 - i;
+              char * temp = new char[1];
+              strcpy (temp, chiffre.substr (i, 1).c_str ());
+              if (i != 7)
+                {
+                  somme += atoi (temp) * (8 - i);
+                }
+              else
+                {
+                  isValid = atoi (temp) == somme % 11;
+                }
             }
-          isValid = atoi (chiffre[7].c_str ()) == somme % 11;
         }
     }
-
   cout << isValid << endl;
-
 
   return 0;
 }
 
+
+bool
+isStringDigit (const string& aValider)
+{
+  bool isValid = true;
+  for (int i = 0; i < aValider.length () && isValid; i++)
+    {
+      if (!isdigit (aValider[i]))
+        {
+          isValid = false;
+        }
+    }
+  return isValid;
+}

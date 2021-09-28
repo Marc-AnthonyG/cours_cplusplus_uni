@@ -11,7 +11,7 @@
 
 bool validerFormatNom (const std::string& p_nom);
 bool validerCodeIssn (const std::string& p_issn);
-
+bool isStringDigit (const string& aValider);
 
 #endif /* VALIDATIONFORMAT_H */
 
