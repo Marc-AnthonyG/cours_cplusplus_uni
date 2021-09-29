@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>../fonctionsUtilitaires.h</itemPath>
+      <itemPath>../validationFormat.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,10 +15,8 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>../fonctionsUtilitaires.cpp</itemPath>
-      <itemPath>../fonctionsUtilitaires.h</itemPath>
       <itemPath>../programmePrincipal.cpp</itemPath>
-      <itemPath>validationFormat.cpp</itemPath>
-      <itemPath>validationFormat/validationFormat.h</itemPath>
+      <itemPath>../validationFormat.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -46,12 +46,9 @@
       </item>
       <item path="../programmePrincipal.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="validationFormat.cpp" ex="false" tool="1" flavor2="0">
+      <item path="../validationFormat.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="validationFormat/validationFormat.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="../validationFormat.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -80,12 +77,9 @@
       </item>
       <item path="../programmePrincipal.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="validationFormat.cpp" ex="false" tool="1" flavor2="0">
+      <item path="../validationFormat.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="validationFormat/validationFormat.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
+      <item path="../validationFormat.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
