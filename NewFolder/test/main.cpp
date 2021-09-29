@@ -19,6 +19,7 @@
 
 using namespace std;
 bool isStringDigit (const string& aValider);
+bool checkLastDigit (int somme, string lastDigit);
 
 
 /*
@@ -27,31 +28,49 @@ bool isStringDigit (const string& aValider);
 int
 main (int argc, char** argv)
 {
-  const string p_issn = "ISSN 1467-8640";
+  const string p_isbn = "ISBN 978-2-1234-5680-2";
   bool isValid = false;
 
-  if (p_issn.substr (0, 5).compare ("ISSN ") == 0 && p_issn.length () == 14 && p_issn.substr (9, 1).compare ("-") == 0)
+  if (p_isbn.substr (0, 5).compare ("ISBN ") == 0
+      && (p_isbn.substr (5, 4).compare ("978-") == 0 || p_isbn.substr (5, 4).compare ("979-") == 0)
+      && p_isbn.length () == 22)
     {
-      string chiffre = "";
-      chiffre.append (p_issn.substr (5, 4).append (p_issn.substr (10, 4)));
-      if (isStringDigit (chiffre))
+      string check = p_isbn.substr (9, string::npos);
+      bool nombreValide = true;
+      int sommeCheck = 0;
+      int numeroNombre = 0;
+
+      for (int i = 0; i < check.length () && nombreValide; i++)
         {
-          int somme = 0;
-          for (int i = 0; i < chiffre.length (); i++)
+          if (i == check.length () - 2)
             {
-              char * temp = new char[1];
-              strcpy (temp, chiffre.substr (i, 1).c_str ());
-              if (i != 7)
+              nombreValide = check[i] == '-';
+            }
+          else if (i == check.length () - 1)
+            {
+              isValid = checkLastDigit (sommeCheck, check.substr (i, 1));
+            }
+          else
+            {
+              if (check[i] == '-')
                 {
-                  somme += atoi (temp) * (8 - i);
+                  nombreValide = !(check[i + 1] == '-');
+                }
+              else if (isStringDigit (check.substr (i, 1)))
+                {
+                  char * temp = new char[1];
+                  strcpy (temp, check.substr (i, 1).c_str ());
+                  sommeCheck += atoi (temp) * (10 - numeroNombre);
+                  numeroNombre++;
                 }
               else
                 {
-                  isValid = atoi (temp) == somme % 11;
+                  nombreValide = false;
                 }
             }
         }
     }
+
   cout << isValid << endl;
 
   return 0;
@@ -68,6 +87,24 @@ isStringDigit (const string& aValider)
         {
           isValid = false;
         }
+    }
+  return isValid;
+}
+
+
+bool
+checkLastDigit (int somme, string lastDigit)
+{
+  bool isValid = true;
+  char * nbrValidation = new char[1];
+  strcpy (nbrValidation, lastDigit.c_str ());
+  if (isStringDigit (lastDigit))
+    {
+      isValid = atoi (nbrValidation) == 11 - somme % 11;
+    }
+  else
+    {
+      isValid = (*nbrValidation == 'X') && (somme % 11 == 1);
     }
   return isValid;
 }
