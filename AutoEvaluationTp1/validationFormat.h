@@ -14,8 +14,9 @@
 bool validerFormatNom (const std::string& p_nom);
 bool validerCodeIssn (const std::string& p_issn);
 bool isStringDigit (const std::string& aValider);
-bool checkLastDigit (int somme, std::string lastDigit);
 bool validerCodeIsbn (const std::string& p_isbn);
+bool isEditorValid (const std::string& aValider);
+bool isDomaineValid (const std::string& aValider);
 
 #endif /* VALIDATIONFORMAT_H_ */
 

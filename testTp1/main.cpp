@@ -8,13 +8,12 @@
  * File:   main.cpp
  * Author: etudiant
  *
- * Created on 29 septembre 2021, 13:06
+ * Created on 29 septembre 2021, 18:53
  */
 
-#include <string>
-#include "validationFormat.h"
+#include <cstdlib>
 #include <iostream>
-
+#include "validationFormat.h"
 using namespace std;
 
 
@@ -24,7 +23,6 @@ using namespace std;
 int
 main (int argc, char** argv)
 {
-  cout << validerCodeIsbn ("ISBN 978-2-212-67895-6") << endl;
   cout << validerCodeIsbn ("ISBN 978-99937-1-056-1") << endl;
   return 0;
 }
