@@ -6,7 +6,7 @@
 
 /*
  * File:   validationFormat.cpp
- * Author: etudiant
+ * Author: Marc-Anthony Girard
  *
  * Created on 20 septembre 2021, 20:52
  */
