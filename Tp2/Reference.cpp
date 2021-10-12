@@ -17,10 +17,10 @@ using namespace std;
  * \brief Constructeur avec paramètres.
  *
  * Les paramètres sont l'auteur, le titre, l'année ainsi qu'un identifiant ISBN ou ISSN.
- * \param[in] p_auteur Nom et prenom de l'auteur ou du premier auteur de la publication.
- * \param[in] p_titre Titre de la publication.
- * \param[in] p_annee Année de publication. Pourra être changer.
- * \param[in] p_identifiant Identifiant ISBN ou ISSN de la publication.
+ * \param[in] p_auteur Nom et prenom de l'auteur ou du premier auteur de la publication. Il doit être non vide, doit être composé que de lettres, mais les espaces et les tirets ‘-‘ sont permis s’ils ne sont pas doublés; deux (ou plus) espaces ou ‘-‘ consécutifs; un tiret ne pouvant pas être suivi d’un espace et inversement.
+ * \param[in] p_titre Titre de la publication. Le titre doit être non vide et peut comporter des espaces.
+ * \param[in] p_annee Année de publication. Pourra être changer. Elle doit être strictement plus grande que 0
+ * \param[in] p_identifiant Identifiant ISBN ou ISSN de la publication. Les codes doivent être valide suivant selon la méthode validerCodeIsbn ou validerCodeIssn de la bibliothèque validationFormat.h
  */
 Reference::Reference (const string& p_auteur, const string& p_titre, int p_annee, const string& p_identifiant) : m_auteurs (p_auteur), m_titre (p_titre), m_annee (p_annee), m_identifiant (p_identifiant) { }
 
@@ -84,12 +84,12 @@ Reference::asgAnnee (int p_annee)
  * \brief Méthode permettant d'optenir une chaine de caractères qui contient l'information de l'objet Référence.
  * \return Une chaine de caractères avec l'information de la référence.
  */
-std::string
+const std::string
 Reference::reqReferenceFormate () const
 {
   ostringstream oss;
   string separateur = ", ";
-  oss << m_auteurs << separateur << m_titre << separateur << m_annee << separateur << m_identifiant << ".";
+  oss << m_auteurs << separateur << m_titre << separateur << m_annee << separateur << m_identifiant << "." << endl;
   return oss.str ();
 }
 

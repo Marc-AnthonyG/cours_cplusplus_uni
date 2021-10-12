@@ -17,14 +17,14 @@
 class Reference
 {
 public:
-  Reference (std::string p_auteur, std::string p_titre, int p_annee, std::string p_identifiant);
+  Reference (const std::string& p_auteur, const std::string& p_titre, int p_annee, const std::string& p_identifiant);
 
   const std::string& reqAuteur () const;
   const std::string& reqTitre () const;
   int reqAnnee () const;
   const std::string& reqIdentifiant () const;
   void asgAnnee (int p_annee);
-  std::string& reqReferenceFormate () const;
+  const std::string reqReferenceFormate () const;
   bool operator== (const Reference& p_Reference);
 
 private:

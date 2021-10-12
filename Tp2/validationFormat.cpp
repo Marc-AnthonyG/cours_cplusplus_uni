@@ -14,13 +14,9 @@ using namespace std;
 
 
 /**
- * \brief Méthode permettant d'avoir accès au nom de l'auteur de la publication.
- * \return La référence de la string non modifiable contenant le nom de l'auteur.
- */
-
-
-/*
- * isStringDigit passe à travers une string et vérifie si tout les termes de la string sont des nombres
+ * \brief Méthode qui vérifie si tout les termes d'une string sont des nombres
+ * \param[in] aValider La string à valider.
+ * \return True si la string ne contient que des entiers (0 à 9).
  */
 bool
 isStringDigit (const string& aValider)
@@ -37,10 +33,10 @@ isStringDigit (const string& aValider)
 }
 
 
-/*
- * isEditorValid Utilise les deux premiers caractères de l'identifiant de l'éditeur pour vérifier s'il est conforme.
- *
- * NOTE AU CORRECTEUR : Je ne suis pas sûr, mais je ne pense pas que les nombres de longeur 1 sont accepter pour l'éditeur. Pourtant dans les tests on dit que 2 est valide alors que je pense qu'il devrait plutôt être écrit 02.
+/**
+ * \brief Méthode qui vérifie si une string correspond à un numéro d'éditeur valide.
+ * \param[in] aValider La string à valider.
+ * \return True si le numéro d'éditeur est valide.
  */
 bool
 isEditorValid (const string& aValider)
@@ -80,11 +76,11 @@ isEditorValid (const string& aValider)
 }
 
 
-/*
- * isDomaineValid Utilise les trois premiers caractères de l'identifiant du domaine pour vérifier s'il est conforme.
- *
+/**
+ * \brief Méthode qui vérifie si une string correspond à un numéro de domaine valeur valide.
+ * \param[in] aValider La string à valider.
+ * \return True si le numéro de domaine est valide.
  */
-
 bool
 isDomaineValid (const string & aValider)
 {
@@ -119,12 +115,17 @@ isDomaineValid (const string & aValider)
 }
 
 
-/*
+/**
+ * \brief Méthode qui vérifie si une string correspond à un nom valide.
+ *
+ * Un nom valide est constituer que de lettre et n'est pas constituer de deux espaces ou tirets de suite.
  * ValiderFormatNon fonctionne de manière très simple. Il assume que le nom est valide,
  puis il passe à travers tout les caractères. En fesant cela, il y a trois possibilité.
  * (1) Le caractères est une lettre. Si c'est vrai, on ne teste rien d'autre et on passe au suivant.
  * (2) Le caractères est un espace ou un tiret. Dans ce cas, le code vérifie que le caractère suivant est  un autre espace ou un tiret. Si ce n'est pas le cas on passe au caractère suivant sinon on considère le nom invalide.
  * (3) Ce n'est pas un caractère valide donc on sort de l'ittération
+ * \param[in] p_nom La string à valider.
+ * \return True si le nom est valide.
  */
 bool
 validerFormatNom (const string& p_nom)
@@ -152,10 +153,14 @@ validerFormatNom (const string& p_nom)
 }
 
 
-/*
+/**
+ * \brief Méthode qui vérifie si une string correspond à un numéro ISSN valide.
+ *
  * validerCodeIssn Vérifie dans l'ordre
  * (1) Que ISSN est là, que le tiret est à la bonne place et que la chaine à la bonne longeur
  * (2) qu'il n'y a pas de lettre dans la chaine de chiffre
+ * \param[in] p_issn La string à valider.
+ * \return True si le code ISSN est valide.
  */
 bool
 validerCodeIssn (const string & p_issn)
@@ -190,12 +195,15 @@ validerCodeIssn (const string & p_issn)
 }
 
 
-/*
+/**
+ * \brief Méthode qui vérifie si une string correspond à un numéro ISBN valide.
+ *
  * validerCodeIsbn Vérifie dans l'ordre
  * (1) Que ISBN est là, que le préfixe est 978 ou 979 et que la chaine à la bonne longeur
  * (2) Que l'identifiant de domaine est valide
  * (3) Que l'identifiant d'éditeur est valide
- *
+ * \param[in] p_isbn La string à valider.
+ * \return True si le code ISBN est valide.
  */
 bool
 validerCodeIsbn (const std::string & p_isbn)
