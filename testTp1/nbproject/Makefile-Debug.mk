@@ -35,8 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/fonctionsUtilitaires.o \
-	${OBJECTDIR}/programmePrincipal.o \
+	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/validationFormat.o
 
 
@@ -64,15 +63,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/testtp1: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/testtp1 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/fonctionsUtilitaires.o: fonctionsUtilitaires.cpp nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/main.o: main.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/fonctionsUtilitaires.o fonctionsUtilitaires.cpp
-
-${OBJECTDIR}/programmePrincipal.o: programmePrincipal.cpp nbproject/Makefile-${CND_CONF}.mk
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/programmePrincipal.o programmePrincipal.cpp
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 ${OBJECTDIR}/validationFormat.o: validationFormat.cpp nbproject/Makefile-${CND_CONF}.mk
 	${MKDIR} -p ${OBJECTDIR}

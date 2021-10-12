@@ -20,7 +20,7 @@ saisirAnnee ()
   bool valeurCorrecte = false;
   int m_anneeDePublicaiton;
 
-  while (!valeurCorrecte)
+  do
     {
       cout << "Saisissez l'année de publication (Strictement plus grande que 0)" << endl;
       cin >> m_anneeDePublicaiton;
@@ -29,39 +29,32 @@ saisirAnnee ()
           valeurCorrecte = true;
         }
     }
+  while (!valeurCorrecte);
   return m_anneeDePublicaiton;
 }
 
 
-/*
- *Les fonctions de validation ont été développées au TP1 dans le module validationFormat. Il s’agit ici
-de les utiliser pour vérifier les données avant de les transmettre aux méthodes. Insérez ces fonctions dans
-le  namespace  util.  Les  modifications  apportées  au  code  initial  du  TP1,  peuvent  être  qualifiées  de
-maintenance.
- *
- * Aussi,  comme  indiqué  dans  ces  normes,  vous  devez  définir  un  espace  de  nom  (namespace).  Il  devra
-porter le nom suivant : biblio (en minuscules).
- */
 int
 main ()
 {
   bool valeurCorrecte = false;
   string nomAuteur;
-  while (!valeurCorrecte)
+  do
     {
       cout << "Saisissez le nom de l'auteur ou si il y en a plusieurs le premier" << endl;
       getline (std::cin, nomAuteur);
-      if (validerFormatNom (nomAuteur))
+      if (util::validerFormatNom (nomAuteur))
         {
           valeurCorrecte = true;
         }
     }
+  while (!valeurCorrecte);
   cout << endl << endl;
 
 
   valeurCorrecte = false;
   string titre;
-  while (!valeurCorrecte)
+  do
     {
       cout << "Saisissez le titre de la publication. Le titre ne peut pas etre vide" << endl;
       getline (std::cin, titre);
@@ -70,21 +63,23 @@ main ()
           valeurCorrecte = true;
         }
     }
+  while (!valeurCorrecte);
 
   cout << endl << endl;
 
 
   valeurCorrecte = false;
   string code;
-  while (!valeurCorrecte)
+  do
     {
       cout << "Saisissez le code ISBN ou ISSN" << endl;
       getline (std::cin, code);
-      if (validerCodeIssn (code) || validerCodeIsbn (code))
+      if (util::validerCodeIssn (code) || util::validerCodeIsbn (code))
         {
           valeurCorrecte = true;
         }
     }
+  while (!valeurCorrecte);
 
   cout << endl << endl;
 
@@ -92,7 +87,7 @@ main ()
   int annee = saisirAnnee ();
   cout << endl << endl;
 
-  Reference ref = Reference (nomAuteur, titre, annee, code);
+  biblio::Reference ref = biblio::Reference (nomAuteur, titre, annee, code);
   cout <<  "Voici la référence formaté: \n" << ref.reqReferenceFormate () << endl;
 
   cout << endl << endl;

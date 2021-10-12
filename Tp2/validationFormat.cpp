@@ -10,7 +10,7 @@
 #include "validationFormat.h"
 
 
-using namespace std;
+using namespace util;
 
 
 /**
@@ -19,7 +19,7 @@ using namespace std;
  * \return True si la string ne contient que des entiers (0 à 9).
  */
 bool
-isStringDigit (const string& aValider)
+isStringDigit (const std::string& aValider)
 {
   bool isValid = true;
   for (int i = 0; i < aValider.length () && isValid; i++) // On rajoute isValid pour sortir dès que caractères n'est pas un nombre
@@ -39,13 +39,13 @@ isStringDigit (const string& aValider)
  * \return True si le numéro d'éditeur est valide.
  */
 bool
-isEditorValid (const string& aValider)
+isEditorValid (const std::string& aValider)
 {
   bool isValid = false;
   char * firstChar = new char[1];
-  strcpy (firstChar, aValider.substr (0, 1).c_str ());
+  std::strcpy (firstChar, aValider.substr (0, 1).c_str ());
   char * secondChar = new char[1];
-  strcpy (secondChar, aValider.substr (1, 1).c_str ());
+  std::strcpy (secondChar, aValider.substr (1, 1).c_str ());
 
   //création de char pour la fonction atoi
   switch (aValider.length ())
@@ -82,7 +82,7 @@ isEditorValid (const string& aValider)
  * \return True si le numéro de domaine est valide.
  */
 bool
-isDomaineValid (const string & aValider)
+isDomaineValid (const std::string & aValider)
 {
   bool isValid = false;
   //création de char pour la fonction atoi
@@ -128,7 +128,7 @@ isDomaineValid (const string & aValider)
  * \return True si le nom est valide.
  */
 bool
-validerFormatNom (const string& p_nom)
+util::validerFormatNom (const std::string& p_nom)
 {
   bool isValid = true;
 
@@ -163,13 +163,13 @@ validerFormatNom (const string& p_nom)
  * \return True si le code ISSN est valide.
  */
 bool
-validerCodeIssn (const string & p_issn)
+util::validerCodeIssn (const std::string & p_issn)
 {
   bool isValid = false;
 
   if (p_issn.substr (0, 5).compare ("ISSN ") == 0 && p_issn.length () == 14 && p_issn[9] == '-') //(1)
     {
-      string chiffre = "";
+      std::string chiffre = "";
       chiffre.append (p_issn.substr (5, 4).append (p_issn.substr (10, 3)));
 
       if (isStringDigit (chiffre))//(2)
@@ -206,7 +206,7 @@ validerCodeIssn (const string & p_issn)
  * \return True si le code ISBN est valide.
  */
 bool
-validerCodeIsbn (const std::string & p_isbn)
+util::validerCodeIsbn (const std::string & p_isbn)
 {
   bool isValid = false;
 
@@ -214,12 +214,12 @@ validerCodeIsbn (const std::string & p_isbn)
       && (p_isbn.substr (5, 4).compare ("978-") == 0 || p_isbn.substr (5, 4).compare ("979-") == 0)
       && p_isbn.length () == 22) //(1)
     {
-      string domaine = p_isbn.substr (9, p_isbn.substr (9, string::npos).find ("-"));
+      std::string domaine = p_isbn.substr (9, p_isbn.substr (9, std::string::npos).find ("-"));
       if (isDomaineValid (domaine)) // (2)
         {
-          if (isEditorValid (p_isbn.substr (10 + domaine.length (), p_isbn.substr (10 + domaine.length (), string::npos).find ("-")))) // (3)
+          if (isEditorValid (p_isbn.substr (10 + domaine.length (), p_isbn.substr (10 + domaine.length (), std::string::npos).find ("-")))) // (3)
             {
-              string check = p_isbn.substr (5, string::npos);
+              std::string check = p_isbn.substr (5, std::string::npos);
               bool nombreValide = true;
               int sommeCheck = 0;
               bool estMulTrois = false;

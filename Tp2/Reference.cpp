@@ -10,7 +10,7 @@
 #include<iostream>
 #include <sstream>
 
-using namespace std;
+using namespace biblio;
 
 
 /**
@@ -22,7 +22,7 @@ using namespace std;
  * \param[in] p_annee Année de publication. Pourra être changer. Elle doit être strictement plus grande que 0
  * \param[in] p_identifiant Identifiant ISBN ou ISSN de la publication. Les codes doivent être valide suivant selon la méthode validerCodeIsbn ou validerCodeIssn de la bibliothèque validationFormat.h
  */
-Reference::Reference (const string& p_auteur, const string& p_titre, int p_annee, const string& p_identifiant) : m_auteurs (p_auteur), m_titre (p_titre), m_annee (p_annee), m_identifiant (p_identifiant) { }
+Reference::Reference (const std::string& p_auteur, const std::string& p_titre, int p_annee, const std::string& p_identifiant) : m_auteurs (p_auteur), m_titre (p_titre), m_annee (p_annee), m_identifiant (p_identifiant) { }
 
 
 /**
@@ -87,9 +87,9 @@ Reference::asgAnnee (int p_annee)
 const std::string
 Reference::reqReferenceFormate () const
 {
-  ostringstream oss;
-  string separateur = ", ";
-  oss << m_auteurs << separateur << m_titre << separateur << m_annee << separateur << m_identifiant << "." << endl;
+  std::ostringstream oss;
+  std::string separateur = ", ";
+  oss << m_auteurs << separateur << m_titre << separateur << m_annee << separateur << m_identifiant << "." << std::endl;
   return oss.str ();
 }
 

@@ -14,24 +14,26 @@
  * \class Reference
  * \brief Classe Reference permettant de modéliser des références de livre composé d'un auteur, d'un titre, d'une année ainsi que d'un indentifiant ISBN ou ISSN.
  */
-class Reference
+namespace biblio
 {
-public:
-  Reference (const std::string& p_auteur, const std::string& p_titre, int p_annee, const std::string& p_identifiant);
 
-  const std::string& reqAuteur () const;
-  const std::string& reqTitre () const;
-  int reqAnnee () const;
-  const std::string& reqIdentifiant () const;
-  void asgAnnee (int p_annee);
-  const std::string reqReferenceFormate () const;
-  bool operator== (const Reference& p_Reference);
+  class Reference
+  {
+  public:
+    Reference (const std::string& p_auteur, const std::string& p_titre, int p_annee, const std::string& p_identifiant);
+    const std::string& reqAuteur () const;
+    const std::string& reqTitre () const;
+    int reqAnnee () const;
+    const std::string& reqIdentifiant () const;
+    void asgAnnee (int p_annee);
+    const std::string reqReferenceFormate () const;
+    bool operator== (const Reference& p_Reference);
 
-private:
-  std::string m_auteurs;
-  std::string m_titre;
-  int m_annee;
-  std::string m_identifiant;
-};
-
+  private:
+    std::string m_auteurs;
+    std::string m_titre;
+    int m_annee;
+    std::string m_identifiant;
+  };
+}
 #endif /* REFERENCE_H */
