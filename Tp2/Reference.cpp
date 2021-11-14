@@ -7,7 +7,7 @@
 
 #include "Reference.h"
 #include <string>
-#include<iostream>
+#include <iostream>
 #include <sstream>
 
 using namespace biblio;
@@ -17,12 +17,12 @@ using namespace biblio;
  * \brief Constructeur avec paramètres.
  *
  * Les paramètres sont l'auteur, le titre, l'année ainsi qu'un identifiant ISBN ou ISSN.
- * \param[in] p_auteur Nom et prenom de l'auteur ou du premier auteur de la publication. Il doit être non vide, doit être composé que de lettres, mais les espaces et les tirets ‘-‘ sont permis s’ils ne sont pas doublés; deux (ou plus) espaces ou ‘-‘ consécutifs; un tiret ne pouvant pas être suivi d’un espace et inversement.
+ * \param[in] p_auteurs Nom et prenom de l'auteur ou du premier auteur de la publication. Il doit être non vide, doit être composé que de lettres, mais les espaces et les tirets ‘-‘ sont permis s’ils ne sont pas doublés; deux (ou plus) espaces ou ‘-‘ consécutifs; un tiret ne pouvant pas être suivi d’un espace et inversement.
  * \param[in] p_titre Titre de la publication. Le titre doit être non vide et peut comporter des espaces.
  * \param[in] p_annee Année de publication. Pourra être changer. Elle doit être strictement plus grande que 0
- * \param[in] p_identifiant Identifiant ISBN ou ISSN de la publication. Les codes doivent être valide suivant selon la méthode validerCodeIsbn ou validerCodeIssn de la bibliothèque validationFormat.h
+ * \param[in] p_identifiant Identifiant ISBN ou ISSN de la publication. Les codes doivent être valide suivant selon les méthodes validerCodeIsbn ou validerCodeIssn de la bibliothèque validationFormat.h
  */
-Reference::Reference (const std::string& p_auteur, const std::string& p_titre, int p_annee, const std::string& p_identifiant) : m_auteurs (p_auteur), m_titre (p_titre), m_annee (p_annee), m_identifiant (p_identifiant) { }
+Reference::Reference (const std::string& p_auteurs, const std::string& p_titre, int p_annee, const std::string& p_identifiant) : m_auteurs (p_auteurs), m_titre (p_titre), m_annee (p_annee), m_identifiant (p_identifiant) { }
 
 
 /**

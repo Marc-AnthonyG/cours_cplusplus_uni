@@ -1,0 +1,119 @@
+\hypertarget{validation_format_8cpp}{}\doxysection{/home/etudiant/\+Bureau/fichier partager V\+M/workspaceS prog/\+Tp2/validation\+Format.cpp File Reference}
+\label{validation_format_8cpp}\index{/home/etudiant/Bureau/fichier partager VM/workspaceS prog/Tp2/validationFormat.cpp@{/home/etudiant/Bureau/fichier partager VM/workspaceS prog/Tp2/validationFormat.cpp}}
+
+
+Implementation de la bibliothèque \mbox{\hyperlink{classvalidation_format}{validation\+Format}}.  
+
+
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include \char`\"{}validation\+Format.\+h\char`\"{}}\newline
+Include dependency graph for validation\+Format.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{validation_format_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{validation_format_8cpp_a2c93b2d9d555190ab168e87882af25c6}{is\+String\+Digit}} (const std\+::string \&a\+Valider)
+\begin{DoxyCompactList}\small\item\em Méthode qui vérifie si tout les termes d\textquotesingle{}une string sont des nombres. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validation_format_8cpp_a39cb7cf8e870190ba8f342a133d8f751}{is\+Editor\+Valid}} (const std\+::string \&a\+Valider)
+\begin{DoxyCompactList}\small\item\em Méthode qui vérifie si une string correspond à un numéro d\textquotesingle{}éditeur valide. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validation_format_8cpp_add89fb4f018bda15c4b56f85b2476481}{is\+Domaine\+Valid}} (const std\+::string \&a\+Valider)
+\begin{DoxyCompactList}\small\item\em Méthode qui vérifie si une string correspond à un numéro de domaine valeur valide. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation de la bibliothèque \mbox{\hyperlink{classvalidation_format}{validation\+Format}}. 
+
+\begin{DoxyAuthor}{Author}
+Marc-\/\+Anthony Girard 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+29 septembre 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{validation_format_8cpp_add89fb4f018bda15c4b56f85b2476481}\label{validation_format_8cpp_add89fb4f018bda15c4b56f85b2476481}} 
+\index{validationFormat.cpp@{validationFormat.cpp}!isDomaineValid@{isDomaineValid}}
+\index{isDomaineValid@{isDomaineValid}!validationFormat.cpp@{validationFormat.cpp}}
+\doxysubsubsection{\texorpdfstring{isDomaineValid()}{isDomaineValid()}}
+{\footnotesize\ttfamily bool is\+Domaine\+Valid (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+Valider }\end{DoxyParamCaption})}
+
+
+
+Méthode qui vérifie si une string correspond à un numéro de domaine valeur valide. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Valider} & La string à valider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si le numéro de domaine est valide. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{validation_format_8cpp_add89fb4f018bda15c4b56f85b2476481_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{validation_format_8cpp_a39cb7cf8e870190ba8f342a133d8f751}\label{validation_format_8cpp_a39cb7cf8e870190ba8f342a133d8f751}} 
+\index{validationFormat.cpp@{validationFormat.cpp}!isEditorValid@{isEditorValid}}
+\index{isEditorValid@{isEditorValid}!validationFormat.cpp@{validationFormat.cpp}}
+\doxysubsubsection{\texorpdfstring{isEditorValid()}{isEditorValid()}}
+{\footnotesize\ttfamily bool is\+Editor\+Valid (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+Valider }\end{DoxyParamCaption})}
+
+
+
+Méthode qui vérifie si une string correspond à un numéro d\textquotesingle{}éditeur valide. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Valider} & La string à valider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si le numéro d\textquotesingle{}éditeur est valide. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{validation_format_8cpp_a39cb7cf8e870190ba8f342a133d8f751_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{validation_format_8cpp_a2c93b2d9d555190ab168e87882af25c6}\label{validation_format_8cpp_a2c93b2d9d555190ab168e87882af25c6}} 
+\index{validationFormat.cpp@{validationFormat.cpp}!isStringDigit@{isStringDigit}}
+\index{isStringDigit@{isStringDigit}!validationFormat.cpp@{validationFormat.cpp}}
+\doxysubsubsection{\texorpdfstring{isStringDigit()}{isStringDigit()}}
+{\footnotesize\ttfamily bool is\+String\+Digit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+Valider }\end{DoxyParamCaption})}
+
+
+
+Méthode qui vérifie si tout les termes d\textquotesingle{}une string sont des nombres. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Valider} & La string à valider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si la string ne contient que des entiers (0 à 9). 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{validation_format_8cpp_a2c93b2d9d555190ab168e87882af25c6_icgraph}
+\end{center}
+\end{figure}

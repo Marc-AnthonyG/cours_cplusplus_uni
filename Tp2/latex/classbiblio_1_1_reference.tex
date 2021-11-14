@@ -1,0 +1,168 @@
+\hypertarget{classbiblio_1_1_reference}{}\doxysection{biblio\+::Reference Class Reference}
+\label{classbiblio_1_1_reference}\index{biblio::Reference@{biblio::Reference}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classbiblio_1_1_reference_a91e42195ac1df6f21f8d17b12800415f}{Reference}} (const std\+::string \&p\+\_\+auteurs, const std\+::string \&p\+\_\+titre, int p\+\_\+annee, const std\+::string \&p\+\_\+identifiant)
+\begin{DoxyCompactList}\small\item\em Constructeur avec paramètres. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classbiblio_1_1_reference_ab93a163e39975c0981bb81f513703c61}{req\+Auteur}} () const
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}avoir accès au nom de l\textquotesingle{}auteur de la publication. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classbiblio_1_1_reference_a35d5a1a79896ebbc72e441bb23a94bc8}{req\+Titre}} () const
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}avoir accès au nom titre de la publication. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classbiblio_1_1_reference_a842fc37dfaa3fa224e4ca6f592172242}{req\+Annee}} () const
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}avoir accès à l\textquotesingle{}année de publication. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classbiblio_1_1_reference_a9b93da91109c4823a0c84fb800915e1d}{req\+Identifiant}} () const
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}avoir accès à l\textquotesingle{}identification de la publication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classbiblio_1_1_reference_af2f59014bf0965ca98b8af13c4525004}{asg\+Annee}} (int p\+\_\+annee)
+\begin{DoxyCompactList}\small\item\em Méthode permettant de changer l\textquotesingle{}année de la publication. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{classbiblio_1_1_reference_a3c4d9b187223821853b78a56ce3ff13d}{req\+Reference\+Formate}} () const
+\begin{DoxyCompactList}\small\item\em Méthode permettant d\textquotesingle{}optenir une chaine de caractères qui contient l\textquotesingle{}information de l\textquotesingle{}objet Référence. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classbiblio_1_1_reference_a5ca818f8aa36841aae8c5469f9240f4e}{operator==}} (const \mbox{\hyperlink{classbiblio_1_1_reference}{Reference}} \&p\+\_\+\+Reference)
+\begin{DoxyCompactList}\small\item\em Surcharge de l\textquotesingle{}opérateur égale (==) afin de déterminer si deux références sont égale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbiblio_1_1_reference_a91e42195ac1df6f21f8d17b12800415f}\label{classbiblio_1_1_reference_a91e42195ac1df6f21f8d17b12800415f}} 
+\index{biblio::Reference@{biblio::Reference}!Reference@{Reference}}
+\index{Reference@{Reference}!biblio::Reference@{biblio::Reference}}
+\doxysubsubsection{\texorpdfstring{Reference()}{Reference()}}
+{\footnotesize\ttfamily Reference\+::\+Reference (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+\_\+auteurs,  }\item[{const std\+::string \&}]{p\+\_\+titre,  }\item[{int}]{p\+\_\+annee,  }\item[{const std\+::string \&}]{p\+\_\+identifiant }\end{DoxyParamCaption})}
+
+
+
+Constructeur avec paramètres. 
+
+Les paramètres sont l\textquotesingle{}auteur, le titre, l\textquotesingle{}année ainsi qu\textquotesingle{}un identifiant I\+S\+BN ou I\+S\+SN. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+auteurs} & Nom et prenom de l\textquotesingle{}auteur ou du premier auteur de la publication. Il doit être non vide, doit être composé que de lettres, mais les espaces et les tirets ‘-\/‘ sont permis s’ils ne sont pas doublés; deux (ou plus) espaces ou ‘-\/‘ consécutifs; un tiret ne pouvant pas être suivi d’un espace et inversement. \\
+\hline
+\mbox{\texttt{ in}}  & {\em p\+\_\+titre} & Titre de la publication. Le titre doit être non vide et peut comporter des espaces. \\
+\hline
+\mbox{\texttt{ in}}  & {\em p\+\_\+annee} & Année de publication. Pourra être changer. Elle doit être strictement plus grande que 0 \\
+\hline
+\mbox{\texttt{ in}}  & {\em p\+\_\+identifiant} & Identifiant I\+S\+BN ou I\+S\+SN de la publication. Les codes doivent être valide suivant selon les méthodes valider\+Code\+Isbn ou valider\+Code\+Issn de la bibliothèque \mbox{\hyperlink{validation_format_8h}{validation\+Format.\+h}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classbiblio_1_1_reference_af2f59014bf0965ca98b8af13c4525004}\label{classbiblio_1_1_reference_af2f59014bf0965ca98b8af13c4525004}} 
+\index{biblio::Reference@{biblio::Reference}!asgAnnee@{asgAnnee}}
+\index{asgAnnee@{asgAnnee}!biblio::Reference@{biblio::Reference}}
+\doxysubsubsection{\texorpdfstring{asgAnnee()}{asgAnnee()}}
+{\footnotesize\ttfamily void Reference\+::asg\+Annee (\begin{DoxyParamCaption}\item[{int}]{p\+\_\+annee }\end{DoxyParamCaption})}
+
+
+
+Méthode permettant de changer l\textquotesingle{}année de la publication. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+annee} & Nouvel année de publication de la publication. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbiblio_1_1_reference_a5ca818f8aa36841aae8c5469f9240f4e}\label{classbiblio_1_1_reference_a5ca818f8aa36841aae8c5469f9240f4e}} 
+\index{biblio::Reference@{biblio::Reference}!operator==@{operator==}}
+\index{operator==@{operator==}!biblio::Reference@{biblio::Reference}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Reference\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classbiblio_1_1_reference}{Reference}} \&}]{p\+\_\+\+Reference }\end{DoxyParamCaption})}
+
+
+
+Surcharge de l\textquotesingle{}opérateur égale (==) afin de déterminer si deux références sont égale. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+\+Reference} & La référence qui sera comparé à l\textquotesingle{}objet courant. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un booléan d\textquotesingle{}état Vrai si les deux références sont en tous points pareils. (même auteur, année, identifiant et titre) 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classbiblio_1_1_reference_a5ca818f8aa36841aae8c5469f9240f4e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbiblio_1_1_reference_a842fc37dfaa3fa224e4ca6f592172242}\label{classbiblio_1_1_reference_a842fc37dfaa3fa224e4ca6f592172242}} 
+\index{biblio::Reference@{biblio::Reference}!reqAnnee@{reqAnnee}}
+\index{reqAnnee@{reqAnnee}!biblio::Reference@{biblio::Reference}}
+\doxysubsubsection{\texorpdfstring{reqAnnee()}{reqAnnee()}}
+{\footnotesize\ttfamily int Reference\+::req\+Annee (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Méthode permettant d\textquotesingle{}avoir accès à l\textquotesingle{}année de publication. 
+
+\begin{DoxyReturn}{Returns}
+Un entier contenant l\textquotesingle{}année de la référence. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbiblio_1_1_reference_ab93a163e39975c0981bb81f513703c61}\label{classbiblio_1_1_reference_ab93a163e39975c0981bb81f513703c61}} 
+\index{biblio::Reference@{biblio::Reference}!reqAuteur@{reqAuteur}}
+\index{reqAuteur@{reqAuteur}!biblio::Reference@{biblio::Reference}}
+\doxysubsubsection{\texorpdfstring{reqAuteur()}{reqAuteur()}}
+{\footnotesize\ttfamily const std\+::string \& Reference\+::req\+Auteur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Méthode permettant d\textquotesingle{}avoir accès au nom de l\textquotesingle{}auteur de la publication. 
+
+\begin{DoxyReturn}{Returns}
+La référence de la string non modifiable contenant le nom de l\textquotesingle{}auteur. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbiblio_1_1_reference_a9b93da91109c4823a0c84fb800915e1d}\label{classbiblio_1_1_reference_a9b93da91109c4823a0c84fb800915e1d}} 
+\index{biblio::Reference@{biblio::Reference}!reqIdentifiant@{reqIdentifiant}}
+\index{reqIdentifiant@{reqIdentifiant}!biblio::Reference@{biblio::Reference}}
+\doxysubsubsection{\texorpdfstring{reqIdentifiant()}{reqIdentifiant()}}
+{\footnotesize\ttfamily const std\+::string \& Reference\+::req\+Identifiant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Méthode permettant d\textquotesingle{}avoir accès à l\textquotesingle{}identification de la publication. 
+
+\begin{DoxyReturn}{Returns}
+La référence de la string non modifiable contenant l\textquotesingle{}identification de la publication. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbiblio_1_1_reference_a3c4d9b187223821853b78a56ce3ff13d}\label{classbiblio_1_1_reference_a3c4d9b187223821853b78a56ce3ff13d}} 
+\index{biblio::Reference@{biblio::Reference}!reqReferenceFormate@{reqReferenceFormate}}
+\index{reqReferenceFormate@{reqReferenceFormate}!biblio::Reference@{biblio::Reference}}
+\doxysubsubsection{\texorpdfstring{reqReferenceFormate()}{reqReferenceFormate()}}
+{\footnotesize\ttfamily const std\+::string Reference\+::req\+Reference\+Formate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Méthode permettant d\textquotesingle{}optenir une chaine de caractères qui contient l\textquotesingle{}information de l\textquotesingle{}objet Référence. 
+
+\begin{DoxyReturn}{Returns}
+Une chaine de caractères avec l\textquotesingle{}information de la référence. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{classbiblio_1_1_reference_a3c4d9b187223821853b78a56ce3ff13d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classbiblio_1_1_reference_a35d5a1a79896ebbc72e441bb23a94bc8}\label{classbiblio_1_1_reference_a35d5a1a79896ebbc72e441bb23a94bc8}} 
+\index{biblio::Reference@{biblio::Reference}!reqTitre@{reqTitre}}
+\index{reqTitre@{reqTitre}!biblio::Reference@{biblio::Reference}}
+\doxysubsubsection{\texorpdfstring{reqTitre()}{reqTitre()}}
+{\footnotesize\ttfamily const std\+::string \& Reference\+::req\+Titre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Méthode permettant d\textquotesingle{}avoir accès au nom titre de la publication. 
+
+\begin{DoxyReturn}{Returns}
+La référence de la string non modifiable contenant le titre de la publication. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/etudiant/\+Bureau/fichier partager V\+M/workspace\+S prog/\+Tp2/\mbox{\hyperlink{_reference_8h}{Reference.\+h}}\item 
+/home/etudiant/\+Bureau/fichier partager V\+M/workspace\+S prog/\+Tp2/\mbox{\hyperlink{_reference_8cpp}{Reference.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,233 @@
+\hypertarget{validation_format_8h}{}\doxysection{/home/etudiant/\+Bureau/fichier partager V\+M/workspaceS prog/\+Tp2/validation\+Format.h File Reference}
+\label{validation_format_8h}\index{/home/etudiant/Bureau/fichier partager VM/workspaceS prog/Tp2/validationFormat.h@{/home/etudiant/Bureau/fichier partager VM/workspaceS prog/Tp2/validationFormat.h}}
+
+
+Prototype de la librairy \mbox{\hyperlink{classvalidation_format}{validation\+Format}}.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for validation\+Format.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{validation_format_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{validation_format_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{validation_format_8h_ab3d93e73408df98688844f00a8cdce58}{util\+::valider\+Format\+Nom}} (const std\+::string \&p\+\_\+nom)
+\begin{DoxyCompactList}\small\item\em Méthode qui vérifie si une string correspond à un nom valide. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validation_format_8h_a21c007029e2e42ca8c8daab00517069b}{util\+::valider\+Code\+Issn}} (const std\+::string \&p\+\_\+issn)
+\begin{DoxyCompactList}\small\item\em Méthode qui vérifie si une string correspond à un numéro I\+S\+SN valide. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validation_format_8h_a0955ea98068f9537dfb0d7fd66f10860}{util\+::valider\+Code\+Isbn}} (const std\+::string \&p\+\_\+isbn)
+\begin{DoxyCompactList}\small\item\em Méthode qui vérifie si une string correspond à un numéro I\+S\+BN valide. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validation_format_8h_a2c93b2d9d555190ab168e87882af25c6}{is\+String\+Digit}} (const std\+::string \&a\+Valider)
+\begin{DoxyCompactList}\small\item\em Méthode qui vérifie si tout les termes d\textquotesingle{}une string sont des nombres. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validation_format_8h_a39cb7cf8e870190ba8f342a133d8f751}{is\+Editor\+Valid}} (const std\+::string \&a\+Valider)
+\begin{DoxyCompactList}\small\item\em Méthode qui vérifie si une string correspond à un numéro d\textquotesingle{}éditeur valide. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{validation_format_8h_add89fb4f018bda15c4b56f85b2476481}{is\+Domaine\+Valid}} (const std\+::string \&a\+Valider)
+\begin{DoxyCompactList}\small\item\em Méthode qui vérifie si une string correspond à un numéro de domaine valeur valide. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Prototype de la librairy \mbox{\hyperlink{classvalidation_format}{validation\+Format}}. 
+
+\begin{DoxyAuthor}{Author}
+Marc-\/\+Anthony Girard 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+29 septembere 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{validation_format_8h_add89fb4f018bda15c4b56f85b2476481}\label{validation_format_8h_add89fb4f018bda15c4b56f85b2476481}} 
+\index{validationFormat.h@{validationFormat.h}!isDomaineValid@{isDomaineValid}}
+\index{isDomaineValid@{isDomaineValid}!validationFormat.h@{validationFormat.h}}
+\doxysubsubsection{\texorpdfstring{isDomaineValid()}{isDomaineValid()}}
+{\footnotesize\ttfamily bool is\+Domaine\+Valid (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+Valider }\end{DoxyParamCaption})}
+
+
+
+Méthode qui vérifie si une string correspond à un numéro de domaine valeur valide. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Valider} & La string à valider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si le numéro de domaine est valide. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{validation_format_8h_add89fb4f018bda15c4b56f85b2476481_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{validation_format_8h_a39cb7cf8e870190ba8f342a133d8f751}\label{validation_format_8h_a39cb7cf8e870190ba8f342a133d8f751}} 
+\index{validationFormat.h@{validationFormat.h}!isEditorValid@{isEditorValid}}
+\index{isEditorValid@{isEditorValid}!validationFormat.h@{validationFormat.h}}
+\doxysubsubsection{\texorpdfstring{isEditorValid()}{isEditorValid()}}
+{\footnotesize\ttfamily bool is\+Editor\+Valid (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+Valider }\end{DoxyParamCaption})}
+
+
+
+Méthode qui vérifie si une string correspond à un numéro d\textquotesingle{}éditeur valide. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Valider} & La string à valider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si le numéro d\textquotesingle{}éditeur est valide. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{validation_format_8h_a39cb7cf8e870190ba8f342a133d8f751_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{validation_format_8h_a2c93b2d9d555190ab168e87882af25c6}\label{validation_format_8h_a2c93b2d9d555190ab168e87882af25c6}} 
+\index{validationFormat.h@{validationFormat.h}!isStringDigit@{isStringDigit}}
+\index{isStringDigit@{isStringDigit}!validationFormat.h@{validationFormat.h}}
+\doxysubsubsection{\texorpdfstring{isStringDigit()}{isStringDigit()}}
+{\footnotesize\ttfamily bool is\+String\+Digit (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+Valider }\end{DoxyParamCaption})}
+
+
+
+Méthode qui vérifie si tout les termes d\textquotesingle{}une string sont des nombres. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Valider} & La string à valider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si la string ne contient que des entiers (0 à 9). 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{validation_format_8h_a2c93b2d9d555190ab168e87882af25c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{validation_format_8h_a0955ea98068f9537dfb0d7fd66f10860}\label{validation_format_8h_a0955ea98068f9537dfb0d7fd66f10860}} 
+\index{validationFormat.h@{validationFormat.h}!validerCodeIsbn@{validerCodeIsbn}}
+\index{validerCodeIsbn@{validerCodeIsbn}!validationFormat.h@{validationFormat.h}}
+\doxysubsubsection{\texorpdfstring{validerCodeIsbn()}{validerCodeIsbn()}}
+{\footnotesize\ttfamily bool util\+::valider\+Code\+Isbn (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+\_\+isbn }\end{DoxyParamCaption})}
+
+
+
+Méthode qui vérifie si une string correspond à un numéro I\+S\+BN valide. 
+
+valider\+Code\+Isbn Vérifie dans l\textquotesingle{}ordre (1) Que I\+S\+BN est là, que le préfixe est 978 ou 979 et que la chaine à la bonne longeur (2) Que l\textquotesingle{}identifiant de domaine est valide (3) Que l\textquotesingle{}identifiant d\textquotesingle{}éditeur est valide 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+isbn} & La string à valider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si le code I\+S\+BN est valide. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{validation_format_8h_a0955ea98068f9537dfb0d7fd66f10860_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{validation_format_8h_a0955ea98068f9537dfb0d7fd66f10860_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{validation_format_8h_a21c007029e2e42ca8c8daab00517069b}\label{validation_format_8h_a21c007029e2e42ca8c8daab00517069b}} 
+\index{validationFormat.h@{validationFormat.h}!validerCodeIssn@{validerCodeIssn}}
+\index{validerCodeIssn@{validerCodeIssn}!validationFormat.h@{validationFormat.h}}
+\doxysubsubsection{\texorpdfstring{validerCodeIssn()}{validerCodeIssn()}}
+{\footnotesize\ttfamily bool util\+::valider\+Code\+Issn (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+\_\+issn }\end{DoxyParamCaption})}
+
+
+
+Méthode qui vérifie si une string correspond à un numéro I\+S\+SN valide. 
+
+valider\+Code\+Issn Vérifie dans l\textquotesingle{}ordre (1) Que I\+S\+SN est là, que le tiret est à la bonne place et que la chaine à la bonne longeur (2) qu\textquotesingle{}il n\textquotesingle{}y a pas de lettre dans la chaine de chiffre 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+issn} & La string à valider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si le code I\+S\+SN est valide. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{validation_format_8h_a21c007029e2e42ca8c8daab00517069b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{validation_format_8h_a21c007029e2e42ca8c8daab00517069b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{validation_format_8h_ab3d93e73408df98688844f00a8cdce58}\label{validation_format_8h_ab3d93e73408df98688844f00a8cdce58}} 
+\index{validationFormat.h@{validationFormat.h}!validerFormatNom@{validerFormatNom}}
+\index{validerFormatNom@{validerFormatNom}!validationFormat.h@{validationFormat.h}}
+\doxysubsubsection{\texorpdfstring{validerFormatNom()}{validerFormatNom()}}
+{\footnotesize\ttfamily bool util\+::valider\+Format\+Nom (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+\_\+nom }\end{DoxyParamCaption})}
+
+
+
+Méthode qui vérifie si une string correspond à un nom valide. 
+
+Un nom valide est constituer que de lettre et n\textquotesingle{}est pas constituer de deux espaces ou tirets de suite. Valider\+Format\+Non fonctionne de manière très simple. Il assume que le nom est valide, puis il passe à travers tout les caractères. En fesant cela, il y a trois possibilité. (1) Le caractères est une lettre. Si c\textquotesingle{}est vrai, on ne teste rien d\textquotesingle{}autre et on passe au suivant. (2) Le caractères est un espace ou un tiret. Dans ce cas, le code vérifie que le caractère suivant est un autre espace ou un tiret. Si ce n\textquotesingle{}est pas le cas on passe au caractère suivant sinon on considère le nom invalide. (3) Ce n\textquotesingle{}est pas un caractère valide donc on sort de l\textquotesingle{}ittération 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+nom} & La string à valider. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True si le nom est valide. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{validation_format_8h_ab3d93e73408df98688844f00a8cdce58_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{validation_format_8h_ab3d93e73408df98688844f00a8cdce58_icgraph}
+\end{center}
+\end{figure}

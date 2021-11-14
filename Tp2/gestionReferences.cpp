@@ -14,6 +14,9 @@
 using namespace std;
 
 
+//ISBN 978-2-7605-5379-8
+
+
 int
 saisirAnnee ()
 {
@@ -87,7 +90,7 @@ main ()
   int annee = saisirAnnee ();
   cout << endl << endl;
 
-  biblio::Reference ref = biblio::Reference (nomAuteur, titre, annee, code);
+  biblio::Reference ref (nomAuteur, titre, annee, code);
   cout <<  "Voici la référence formaté: \n" << ref.reqReferenceFormate () << endl;
 
   cout << endl << endl;
