@@ -65,3 +65,7 @@ bool Bibliographie::operator= (const Bibliographie & p_bibliographie) const
 {
   return true;
 }
+
+
+void
+Bibliographie::verifieInvariant () const { }

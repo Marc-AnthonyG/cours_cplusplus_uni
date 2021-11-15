@@ -29,6 +29,7 @@ namespace biblio
     std::string m_nom;
     std::vector<Reference*> m_vReferences;
     bool referenceEstDejaPresente (const std::string& p_identifiant) const;
+    void verifieInvariant () const;
 
   };
 }

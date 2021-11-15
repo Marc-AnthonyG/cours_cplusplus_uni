@@ -27,10 +27,16 @@ using namespace biblio;
 Reference::Reference (const std::string& p_auteurs, const std::string& p_titre, int p_annee, const std::string& p_identifiant) : m_auteurs (p_auteurs), m_titre (p_titre), m_annee (p_annee), m_identifiant (p_identifiant)
 {
   PRECONDITION (util::validerFormatNom (p_auteurs));
+  PRECONDITION (util::validerCodeIssn (p_identifiant) || util::validerCodeIbsn (p_identifiant));
   PRECONDITION (!p_titre.empty ());
   PRECONDITION (p_annee > 0);
 
+  POSTCONDITION (m_auteurs == p_auteurs);
+  POSTCONDITION (m_titre == p_titre);
+  POSTCONDITION (m_annee == p_annee);
+  POSTCONDITION (m_identifiant == p_identifiant);
 
+  INVARIANTS ();
 }
 
 
@@ -85,7 +91,13 @@ Reference::reqIdentifiant () const
 void
 Reference::asgAnnee (int p_annee)
 {
-  if (p_annee > 0) m_annee = p_annee;
+  PRECONDITION (p_annee > 0);
+
+  m_annee = p_annee;
+
+  POSTCONDITION (m_annee == p_annee);
+
+  INVARIANTS ();
 }
 
 
@@ -101,4 +113,10 @@ bool Reference::operator== (const Reference& p_Reference) const
 
 
 void
-Reference::verifieInvariant () const { }
+Reference::verifieInvariant () const
+{
+  INVARIANT (util::validerFormatNom (m_auteurs));
+  INVARIANT (util::validerCodeIssn (m_identifiant) || util::validerCodeIbsn (m_identifiant));
+  INVARIANT (!m_titre.empty ());
+  INVARIANT (m_annee > 0);
+}

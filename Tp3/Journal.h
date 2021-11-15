@@ -30,6 +30,7 @@ namespace biblio
     int m_volume;
     int m_numero;
     int m_page;
+    void verifieInvariant () const;
     //CODE ISSN
 
   };

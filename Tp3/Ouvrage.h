@@ -34,6 +34,7 @@ namespace biblio
     std::string m_editeur; //valider nom comfirme sa validite
     std::string m_ville; //validernom =s valide
     //identifiant de reference doit etre isbn
+    void verifieInvariant () const;
   };
 }
 #endif /* OUVRAGE_H */

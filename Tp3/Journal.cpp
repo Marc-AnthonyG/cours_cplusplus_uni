@@ -98,3 +98,7 @@ Journal::clone () const
 {
   return new Journal (*this);
 }
+
+
+void
+Journal::verifieInvariant () const { }

@@ -10,6 +10,8 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include "ContratException.h"
+#include "validationFormat.h"
 
 using namespace biblio;
 
@@ -27,7 +29,16 @@ using namespace biblio;
  *
  *  \param[in] p_ville. Ville de la publication. La ville de publication de l’ouvrage  doit être valide suivant selon la méthode validerFormatNom de la bibliothèque validationFormat.h
  */
-Ouvrage::Ouvrage (const std::string& p_auteurs, const std::string& p_titre, int p_annee, const std::string& p_identifiant, const std::string& p_editeur, const std::string& p_ville) : Reference (p_auteurs, p_titre, p_annee, p_identifiant), m_editeur (p_editeur), m_ville (p_ville) { }
+Ouvrage::Ouvrage (const std::string& p_auteurs, const std::string& p_titre, int p_annee, const std::string& p_identifiant, const std::string& p_editeur, const std::string& p_ville) : Reference (p_auteurs, p_titre, p_annee, p_identifiant), m_editeur (p_editeur), m_ville (p_ville)
+{
+  PRECONDITION (util::validerFormatNom (p_editeur));
+  PRECONDITION (util::validerFormatNom (p_ville));
+
+  POSTCONDITION (m_editeur == p_editeur);
+  POSTCONDITION (m_ville == p_ville);
+
+  INVARIANTS ();
+}
 
 
 /**
@@ -75,3 +86,18 @@ Ouvrage::clone () const
 {
   return new Ouvrage (*this);
 }
+
+
+void
+Ouvrage::verifieInvariant () const
+{
+  INVARIANT (util::validerFormatNom (Reference::reqAuteur ()));
+  INVARIANT (util::validerCodeIsbn (Reference::reqIdentifiant ()));
+  INVARIANT (!Reference::reqTitre ().empty ());
+  INVARIANT (Reference::reqAnnee () > 0);
+
+  INVARIANT (util::validerFormatNom (m_ville));
+  INVARIANT (util::validerFormatNom (m_editeur));
+
+}
+

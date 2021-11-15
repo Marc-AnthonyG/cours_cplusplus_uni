@@ -44,7 +44,7 @@ namespace biblio
     std::string m_titre;
     int m_annee;
     std::string m_identifiant;
-    void verifieInvariant () const;
+    virtual void verifieInvariant () const;
   };
 }
 #endif /* REFERENCE_H */
