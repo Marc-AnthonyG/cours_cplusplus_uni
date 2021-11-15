@@ -9,6 +9,8 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include "ContratException.h"
+#include "validationFormat.h"
 
 using namespace biblio;
 
@@ -22,7 +24,14 @@ using namespace biblio;
  * \param[in] p_annee Année de publication. Pourra être changer. Elle doit être strictement plus grande que 0
  * \param[in] p_identifiant Identifiant ISBN ou ISSN de la publication. Les codes doivent être valide suivant selon les méthodes validerCodeIsbn ou validerCodeIssn de la bibliothèque validationFormat.h
  */
-Reference::Reference (const std::string& p_auteurs, const std::string& p_titre, int p_annee, const std::string& p_identifiant) : m_auteurs (p_auteurs), m_titre (p_titre), m_annee (p_annee), m_identifiant (p_identifiant) { }
+Reference::Reference (const std::string& p_auteurs, const std::string& p_titre, int p_annee, const std::string& p_identifiant) : m_auteurs (p_auteurs), m_titre (p_titre), m_annee (p_annee), m_identifiant (p_identifiant)
+{
+  PRECONDITION (util::validerFormatNom (p_auteurs));
+  PRECONDITION (!p_titre.empty ());
+  PRECONDITION (p_annee > 0);
+
+
+}
 
 
 /**
@@ -89,3 +98,7 @@ bool Reference::operator== (const Reference& p_Reference) const
 {
   return this->reqReferenceFormate ().compare (p_Reference.reqReferenceFormate ());
 }
+
+
+void
+Reference::verifieInvariant () const { }

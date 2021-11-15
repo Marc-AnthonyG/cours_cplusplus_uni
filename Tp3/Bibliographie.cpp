@@ -22,10 +22,10 @@ bool
 Bibliographie::referenceEstDejaPresente (const std::string& p_identifiant) const
 {
   bool isThere = false;
-  for (int i = 0; i < m_vReferences && !isThere; i++)
+  for (int i = 0; i < m_vReferences.size () && !isThere; i++)
     {
       Reference* temp = m_vReferences[i];
-      isThere = p_identifiant == &temp.reqIdentifiant ();
+      isThere = p_identifiant == temp->reqIdentifiant ();
     }
   return isThere;
 }
@@ -43,9 +43,10 @@ Bibliographie::reqBibliographieFormate () const
 {
   std::ostringstream oss;
   oss << "Bibliographie\n===============================";
-  for (int i = 0; i < m_vReferences; i++)
+  for (int i = 0; i < m_vReferences.size (); i++)
     {
-      oss << "[" << i << "] " m_vReferences[i]->reqReferenceFormate ();
+      Reference* temp = m_vReferences[i];
+      oss << "[" << i << "] " << temp->reqReferenceFormate ();
     }
   return oss.str ();
 }
@@ -53,9 +54,9 @@ Bibliographie::reqBibliographieFormate () const
 
 Bibliographie::~Bibliographie ()
 {
-  for (int i = 0; i < m_vReferences; i++)
+  for (int i = 0; i < m_vReferences.size (); i++)
     {
-      delete m_vReferences;
+      delete m_vReferences[i];
     }
 }
 

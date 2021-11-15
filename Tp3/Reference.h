@@ -32,9 +32,9 @@ namespace biblio
     int reqAnnee () const;
     const std::string& reqIdentifiant () const;
     void asgAnnee (int p_annee);
-    virtual const std::string reqReferenceFormate () const;
+    virtual const std::string reqReferenceFormate () const = 0;
     bool operator== (const Reference& p_Reference) const;
-    virtual Reference* clone () const;
+    virtual Reference* clone () const = 0;
 
     virtual
     ~Reference () { };
@@ -44,6 +44,7 @@ namespace biblio
     std::string m_titre;
     int m_annee;
     std::string m_identifiant;
+    void verifieInvariant () const;
   };
 }
 #endif /* REFERENCE_H */
