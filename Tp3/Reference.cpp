@@ -27,7 +27,7 @@ using namespace biblio;
 Reference::Reference (const std::string& p_auteurs, const std::string& p_titre, int p_annee, const std::string& p_identifiant) : m_auteurs (p_auteurs), m_titre (p_titre), m_annee (p_annee), m_identifiant (p_identifiant)
 {
   PRECONDITION (util::validerFormatNom (p_auteurs));
-  PRECONDITION (util::validerCodeIssn (p_identifiant) || util::validerCodeIbsn (p_identifiant));
+  PRECONDITION (util::validerCodeIssn (p_identifiant) || util::validerCodeIsbn (p_identifiant));
   PRECONDITION (!p_titre.empty ());
   PRECONDITION (p_annee > 0);
 
@@ -112,11 +112,14 @@ bool Reference::operator== (const Reference& p_Reference) const
 }
 
 
+/**
+ * \brief Méthode permettant de verifier les invariants de la classe Ouvrage
+ */
 void
 Reference::verifieInvariant () const
 {
   INVARIANT (util::validerFormatNom (m_auteurs));
-  INVARIANT (util::validerCodeIssn (m_identifiant) || util::validerCodeIbsn (m_identifiant));
+  INVARIANT (util::validerCodeIssn (m_identifiant) || util::validerCodeIsbn (m_identifiant));
   INVARIANT (!m_titre.empty ());
   INVARIANT (m_annee > 0);
 }

@@ -8,6 +8,8 @@
 
 #include "Journal.h"
 #include "Reference.h"
+#include "ContratException.h"
+#include "validationFormat.h"
 #include <string>
 #include <iostream>
 #include <sstream>
@@ -22,13 +24,28 @@ using namespace biblio;
  * \param[in] p_auteurs Nom et prenom de l'auteur ou du premier auteur de la publication. Il doit être non vide, doit être composé que de lettres, mais les espaces et les tirets ‘-‘ sont permis s’ils ne sont pas doublés; deux (ou plus) espaces ou ‘-‘ consécutifs; un tiret ne pouvant pas être suivi d’un espace et inversement.
  * \param[in] p_titre Titre de la publication. Le titre doit être non vide et peut comporter des espaces.
  * \param[in] p_annee Année de publication. Pourra être changer. Elle doit être strictement plus grande que 0
- * \param[in] p_identifiant Identifiant ISBN ou ISSN de la publication. Les codes doivent être valide suivant selon les méthodes validerCodeIsbn ou validerCodeIssn de la bibliothèque validationFormat.h
+ * \param[in] p_identifiant Identifiant ISSN de la publication. Le code doit être valide suivant la méthode validerCodeIssn de la bibliothèque validationFormat.h
  * \param[in] p_nom Nom du journal. Le nom doit être non vide et peut comporter des espaces et des chiffres.
  * \param[in] p_volume Numero du volume.
  * \param[in] p_numero Numero de quelque chose.
  * \param[in] p_page Page du volume ou debute la reference.
  */
-Journal::Journal (const std::string& p_auteurs, const std::string& p_titre, int p_annee, const std::string& p_identifiant, const std::string& p_nom, int p_volume, int p_numero, int p_page) : Reference (p_auteurs, p_titre, p_annee, p_identifiant), m_nom (p_nom), m_volume (p_volume), m_numero (p_numero), m_page (p_page) { }
+Journal::Journal (const std::string& p_auteurs, const std::string& p_titre, int p_annee, const std::string& p_identifiant, const std::string& p_nom, int p_volume, int p_numero, int p_page) : Reference (p_auteurs, p_titre, p_annee, p_identifiant), m_nom (p_nom), m_volume (p_volume), m_numero (p_numero), m_page (p_page)
+{
+  PRECONDITION (util::validerCodeIssn (p_identifiant));
+  PRECONDITION (!p_nom.empty ());
+  PRECONDITION (p_volume > 0);
+  PRECONDITION (p_numero > 0);
+  PRECONDITION (p_page > 0);
+
+  POSTCONDITION (m_nom == p_nom);
+  POSTCONDITION (m_volume == p_volume);
+  POSTCONDITION (m_numero == p_numero);
+  POSTCONDITION (m_page == p_page);
+
+
+  INVARIANTS ();
+}
 
 
 /**
@@ -100,5 +117,18 @@ Journal::clone () const
 }
 
 
+/**
+ * \brief Méthode permettant de verifier les invariants de la classe Ouvrage
+ */
 void
-Journal::verifieInvariant () const { }
+Journal::verifieInvariant () const
+{
+  INVARIANT (util::validerFormatNom (Reference::reqAuteur ()));
+  INVARIANT (util::validerCodeIssn (Reference::reqIdentifiant ()));
+  INVARIANT (!Reference::reqTitre ().empty ());
+  INVARIANT (Reference::reqAnnee () > 0);
+  INVARIANT (!m_nom.empty ());
+  INVARIANT (m_volume > 0);
+  INVARIANT (m_numero > 0);
+  INVARIANT (m_page > 0);
+}

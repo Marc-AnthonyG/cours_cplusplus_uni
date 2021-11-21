@@ -23,14 +23,13 @@ using namespace biblio;
  * \param[in] p_auteurs Nom et prenom de l'auteur ou du premier auteur de la publication. Il doit être non vide, doit être composé que de lettres, mais les espaces et les tirets ‘-‘ sont permis s’ils ne sont pas doublés; deux (ou plus) espaces ou ‘-‘ consécutifs; un tiret ne pouvant pas être suivi d’un espace et inversement.
  * \param[in] p_titre Titre de la publication. Le titre doit être non vide et peut comporter des espaces.
  * \param[in] p_annee Année de publication. Pourra être changer. Elle doit être strictement plus grande que 0
- * \param[in] p_identifiant Identifiant ISBN ou ISSN de la publication. Les codes doivent être valide suivant selon les méthodes validerCodeIsbn ou validerCodeIssn de la bibliothèque validationFormat.h
- *
+ * \param[in] p_identifiant Identifiant ISBN de la publication. Le code doit être valide suivant la méthode validerCodeIsbn de la bibliothèque validationFormat.h
  * \param[in] p_editeur. Editeur de la publication. le  nom  de  l'éditeur  de l’ouvrage  doit être valide suivant selon la méthode validerFormatNom de la bibliothèque validationFormat.h
- *
  *  \param[in] p_ville. Ville de la publication. La ville de publication de l’ouvrage  doit être valide suivant selon la méthode validerFormatNom de la bibliothèque validationFormat.h
  */
 Ouvrage::Ouvrage (const std::string& p_auteurs, const std::string& p_titre, int p_annee, const std::string& p_identifiant, const std::string& p_editeur, const std::string& p_ville) : Reference (p_auteurs, p_titre, p_annee, p_identifiant), m_editeur (p_editeur), m_ville (p_ville)
 {
+  PRECONDITION (util::validerCodeIsbn (p_identifiant));
   PRECONDITION (util::validerFormatNom (p_editeur));
   PRECONDITION (util::validerFormatNom (p_ville));
 
@@ -48,6 +47,8 @@ Ouvrage::Ouvrage (const std::string& p_auteurs, const std::string& p_titre, int 
 const std::string&
 Ouvrage::reqVille () const
 {
+
+
   return m_ville;
 }
 
@@ -59,6 +60,8 @@ Ouvrage::reqVille () const
 const std::string&
 Ouvrage::reqEditeur () const
 {
+
+
   return m_editeur;
 }
 
@@ -70,6 +73,8 @@ Ouvrage::reqEditeur () const
 const std::string
 Ouvrage::reqReferenceFormate () const
 {
+
+
   std::ostringstream oss;
   std::string sep = ". ";
   oss << reqAuteur () << sep << reqTitre () << sep << m_ville << " : " << m_editeur << ", " << reqAnnee () << sep << reqIdentifiant () << sep;
@@ -84,10 +89,15 @@ Ouvrage::reqReferenceFormate () const
 Reference*
 Ouvrage::clone () const
 {
+
+
   return new Ouvrage (*this);
 }
 
 
+/**
+ * \brief Méthode permettant de verifier les invariants de la classe Ouvrage
+ */
 void
 Ouvrage::verifieInvariant () const
 {
@@ -95,7 +105,6 @@ Ouvrage::verifieInvariant () const
   INVARIANT (util::validerCodeIsbn (Reference::reqIdentifiant ()));
   INVARIANT (!Reference::reqTitre ().empty ());
   INVARIANT (Reference::reqAnnee () > 0);
-
   INVARIANT (util::validerFormatNom (m_ville));
   INVARIANT (util::validerFormatNom (m_editeur));
 

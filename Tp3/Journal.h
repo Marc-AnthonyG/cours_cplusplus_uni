@@ -5,6 +5,17 @@
  * \date 14 novembre 2021, 10:35
  */
 
+/**
+ * \class Journal
+ * \brief Classe Journal permettant de modéliser des références de journaux. Cette classe decoule de la classe reference et implante ses propres attribut soit le nom de l'editeur et de la ville d'edition.
+ *
+ * Note contract!!!
+ * Le  nom  du journal ne devrait pas etre vide. Le numero de volume, le numero d'article et le nombre de page devrait etre superieur a 0.
+ *
+ * L'identifiant doit etre un code ISSN.
+ *
+ */
+
 #ifndef JOURNAL_H
 #define JOURNAL_H
 #include <string>
@@ -31,8 +42,6 @@ namespace biblio
     int m_numero;
     int m_page;
     void verifieInvariant () const;
-    //CODE ISSN
-
   };
 }
 #endif /* JOURNAL_H */

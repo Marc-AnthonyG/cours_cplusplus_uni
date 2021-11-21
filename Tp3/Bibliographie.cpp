@@ -7,6 +7,8 @@
 
 #include "Reference.h"
 #include "Bibliographie.h"
+#include "ContratException.h"
+#include "validationFormat.h"
 #include <vector>
 #include <string>
 #include <iostream>
@@ -15,7 +17,28 @@
 using namespace biblio;
 
 
-Bibliographie::Bibliographie (std::string p_nom) : m_nom (p_nom) { }
+/**
+ * \brief Constructeur avec paramètres.
+ *
+ * Le paramètre est le nom de la bibliographie.
+ * \param[in] p_nom. Le nom de la bibliographie. Il ne doit pas etre.
+ */
+Bibliographie::Bibliographie (std::string p_nom) : m_nom (p_nom)
+{
+  PRECONDITION (!p_nom.empty ());
+  m_vReferences = {};
+  POSTCONDITION (m_nom == p_nom);
+  POSTCONDITION (m_vReferences.empty ());
+
+  INVARIANTS ();
+}
+
+
+const std::string&
+Bibliographie::reqNom () const
+{
+  return m_nom;
+}
 
 
 bool
@@ -35,6 +58,8 @@ void
 Bibliographie::ajouterReference (const Reference& p_nouvelleReference)
 {
   m_vReferences.push_back (p_nouvelleReference.clone ());
+  POSTCONDITION (p_nouvelleReference.reqReferenceFormate () == m_vReferences[m_vReferences.size () - 1]->reqReferenceFormate ());
+  INVARIANTS ();
 }
 
 
@@ -42,11 +67,10 @@ const std::string
 Bibliographie::reqBibliographieFormate () const
 {
   std::ostringstream oss;
-  oss << "Bibliographie\n===============================";
+  oss << m_nom << "\n===============================";
   for (int i = 0; i < m_vReferences.size (); i++)
     {
-      Reference* temp = m_vReferences[i];
-      oss << "[" << i << "] " << temp->reqReferenceFormate ();
+      oss << "[" << i << "] " << m_vReferences[i]->reqReferenceFormate ();
     }
   return oss.str ();
 }
@@ -58,14 +82,36 @@ Bibliographie::~Bibliographie ()
     {
       delete m_vReferences[i];
     }
+  POSTCONDITION (m_vReferences.empty ());
+  INVARIANTS ();
+}
+
+
+void
+Bibliographie::verifieInvariant () const
+{
+  INVARIANT (m_nom.empty ());
 }
 
 
 bool Bibliographie::operator= (const Bibliographie & p_bibliographie) const
 {
-  return true;
+  return reqBibliographieFormate () == p_bibliographie.reqBibliographieFormate ();
 }
 
 
-void
-Bibliographie::verifieInvariant () const { }
+const std::vector<Reference*>
+Bibliographie::reqVReferences () const
+{
+  return m_vReferences;
+}
+
+/*
+Bibliographie::Bibliographie (const Bibliographie& p_bibliographie)
+{
+  Bibliographie* temp = new Bibliographie (p_bibliographie.reqNom ());
+  for (int i = 0; i < *p_bibliographie.reqVReferences ().size (); i++)
+    {
+ *temp->ajouterReference (*p_bibliographie.reqVReferences ()[i]);
+    }
+}*/

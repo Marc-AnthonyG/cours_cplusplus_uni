@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * \file Ouvrage.h
  * \brief Declaration de la classe Ouvrage
@@ -11,6 +5,15 @@
  * \date 14 novembre 2021, 10:47
  */
 
+/**
+ * \class Ouvrage
+ * \brief Classe Ouvrage permettant de modéliser des références d'ouvrage. Cette classe decoule de la classe reference et implante ses propres attribut soit le nom de l'editeur et de la ville d'edition.
+ *
+ * Note contract!!!
+ * Le  nom  de  l'éditeur ainsi que la ville de publication de l’ouvrage  doit être valide suivant selon la méthode validerFormatNom de la bibliothèque validationFormat.h
+ *
+ * L'identifiant doit etre un code ISBN.
+ */
 
 #ifndef OUVRAGE_H
 #define OUVRAGE_H
@@ -34,7 +37,7 @@ namespace biblio
     std::string m_editeur; //valider nom comfirme sa validite
     std::string m_ville; //validernom =s valide
     //identifiant de reference doit etre isbn
-    void verifieInvariant () const;
+    virtual void verifieInvariant () const;
   };
 }
 #endif /* OUVRAGE_H */

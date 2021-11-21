@@ -9,6 +9,7 @@
 #define REFERENCE_H
 
 #include <string>
+#include "validationFormat.h"
 
 /**
  * \class Reference
