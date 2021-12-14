@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EmployeInterface</class>
+ <widget class="QMainWindow" name="EmployeInterface">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>EmployeInterface</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextEdit" name="affichage">
+    <property name="geometry">
+     <rect>
+      <x>3</x>
+      <y>4</y>
+      <width>781</width>
+      <height>561</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <widget class="QMenu" name="menuAjouter_Employe">
+     <property name="title">
+      <string>Ajouter Employe</string>
+     </property>
+     <addaction name="actionCommission"/>
+     <addaction name="actionHoraire"/>
+     <addaction name="actionPatron"/>
+    </widget>
+    <addaction name="menuAjouter_Employe"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <addaction name="menuMenu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionCommission">
+   <property name="text">
+    <string>Commission</string>
+   </property>
+  </action>
+  <action name="actionHoraire">
+   <property name="text">
+    <string>Horaire</string>
+   </property>
+  </action>
+  <action name="actionPatron">
+   <property name="text">
+    <string>Patron</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionQuitter</sender>
+   <signal>triggered()</signal>
+   <receiver>EmployeInterface</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCommission</sender>
+   <signal>triggered()</signal>
+   <receiver>EmployeInterface</receiver>
+   <slot>dialogCommis()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionHoraire</sender>
+   <signal>triggered()</signal>
+   <receiver>EmployeInterface</receiver>
+   <slot>dialogHoraire()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPatron</sender>
+   <signal>triggered()</signal>
+   <receiver>EmployeInterface</receiver>
+   <slot>dialogPatron()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>dialogCommis()</slot>
+  <slot>dialogHoraire()</slot>
+  <slot>dialogPatron()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,6 @@
+Démarche à suivre pour un dépôt Git contenant des workspaces
+
+1.	Cloner votre dépôt dont vous avez déjà fait la demande de création ;
+2.	Ajouter dans votre dépôt le fichier « .gitignore » fournit sur le site du cours ;
+3.	Lancer NetBeans et pour activer Git sous NetBeans et faire des commits directement par NetBeans.
+    (Voir Documentation Git du Labo 4 inclus dans l'énoncé)

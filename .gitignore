@@ -68,3 +68,9 @@ dkms.conf
 /Tp2/build/
 /Tp2/dist/
 /Tp3/build/
+/SOLUTION_LABO10/EmployeGUI/dist/
+/SOLUTION_LABO10/ProgrammePrincipale/dist/
+/SOLUTION_LABO10/EmployeGUI/build/
+/SOLUTION_LABO10/ProgrammePrincipale/build/
+/SOLUTION_LABO10/Source/build/
+/SOLUTION_LABO10/Source/dist/

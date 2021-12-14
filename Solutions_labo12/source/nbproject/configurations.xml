@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>Cercle.h</itemPath>
+      <itemPath>ContratException.h</itemPath>
+      <itemPath>Forme.h</itemPath>
+      <itemPath>FormeDeuxDimensions.h</itemPath>
+      <itemPath>FormeTroisDimensions.h</itemPath>
+      <itemPath>Sphere.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>Cercle.cpp</itemPath>
+      <itemPath>ContratException.cpp</itemPath>
+      <itemPath>Forme.cpp</itemPath>
+      <itemPath>FormeDeuxDimensions.cpp</itemPath>
+      <itemPath>FormeTroisDimensions.cpp</itemPath>
+      <itemPath>Sphere.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f1"
+                     displayName="FormTesteur"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>FormeTesteur.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2"
+                     displayName="SphereTesteur"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>SphereTesteur.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>/home/etudiant/Bureau/Labo12/Solutions_labo12/source</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="3">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="Cercle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Cercle.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ContratException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ContratException.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Forme.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Forme.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="FormeDeuxDimensions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FormeDeuxDimensions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="FormeTesteur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FormeTroisDimensions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FormeTroisDimensions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Sphere.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sphere.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SphereTesteur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <folder path="TestFiles">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/gtest</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibLibItem>gtest_main</linkerLibLibItem>
+            <linkerLibLibItem>gtest</linkerLibLibItem>
+            <linkerLibStdlibItem>PosixThreads</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+        </linkerTool>
+      </folder>
+    </conf>
+    <conf name="Release" type="3">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="Cercle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Cercle.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ContratException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ContratException.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Forme.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Forme.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="FormeDeuxDimensions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FormeDeuxDimensions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="FormeTesteur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FormeTroisDimensions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FormeTroisDimensions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Sphere.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Sphere.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="SphereTesteur.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+        </linkerTool>
+      </folder>
+    </conf>
+  </confs>
+</configurationDescriptor>
